@@ -22,17 +22,20 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="第二章 传输层">
+  <meta name="description" content="第二章 传输层网络应用是计算机网络存在的理由。 2.1 应用层协议原理应用程序体系结构：客户-服务器体系结构和对等（P2P）体系结构、混合体结构。 C&#x2F;S结构服务器：服务于 来自许多其他成为客户的主机的请求。 客户之间不直接通信。 服务器有固定的IP地址。 eg：Web、FTP、Telnet和电子邮件 扩展性差 P2P结构应用程序在间断连接的主机对之间使用直接通信，成为对等方。 eg：文">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Computer Networks">
 <meta property="og:url" content="http://example.com/2023/10/07/ComputerNetwork/index.html">
 <meta property="og:site_name" content="枫叶苑">
-<meta property="og:description" content="第二章 传输层">
+<meta property="og:description" content="第二章 传输层网络应用是计算机网络存在的理由。 2.1 应用层协议原理应用程序体系结构：客户-服务器体系结构和对等（P2P）体系结构、混合体结构。 C&#x2F;S结构服务器：服务于 来自许多其他成为客户的主机的请求。 客户之间不直接通信。 服务器有固定的IP地址。 eg：Web、FTP、Telnet和电子邮件 扩展性差 P2P结构应用程序在间断连接的主机对之间使用直接通信，成为对等方。 eg：文">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-07T11:03:17.053Z">
-<meta property="article:modified_time" content="2023-10-07T11:47:30.741Z">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231007204153804.png">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231007205501234.png">
+<meta property="article:published_time" content="2023-10-07T11:51:25.740Z">
+<meta property="article:modified_time" content="2023-10-07T13:18:15.800Z">
 <meta property="article:author" content="枫叶">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231007204153804.png">
 
 <link rel="canonical" href="http://example.com/2023/10/07/ComputerNetwork/">
 
@@ -196,7 +199,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-07 19:03:17 / 修改时间：19:47:30" itemprop="dateCreated datePublished" datetime="2023-10-07T19:03:17+08:00">2023-10-07</time>
+              <time title="创建时间：2023-10-07 19:51:25 / 修改时间：21:18:15" itemprop="dateCreated datePublished" datetime="2023-10-07T19:51:25+08:00">2023-10-07</time>
             </span>
 
           
@@ -210,7 +213,104 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第二章-传输层"><a href="#第二章-传输层" class="headerlink" title="第二章 传输层"></a>第二章 传输层</h1>
+        <h1 id="第二章-传输层"><a href="#第二章-传输层" class="headerlink" title="第二章 传输层"></a>第二章 传输层</h1><p>网络应用是计算机网络存在的理由。</p>
+<h2 id="2-1-应用层协议原理"><a href="#2-1-应用层协议原理" class="headerlink" title="2.1 应用层协议原理"></a>2.1 应用层协议原理</h2><p>应用程序体系结构：客户-服务器体系结构和对等（P2P）体系结构、混合体结构。</p>
+<h3 id="C-S结构"><a href="#C-S结构" class="headerlink" title="C&#x2F;S结构"></a>C&#x2F;S结构</h3><p>服务器：服务于 来自许多其他成为客户的主机的请求。</p>
+<p>客户之间不直接通信。</p>
+<p>服务器有固定的IP地址。</p>
+<p>eg：Web、FTP、Telnet和电子邮件</p>
+<p>扩展性差</p>
+<h3 id="P2P结构"><a href="#P2P结构" class="headerlink" title="P2P结构"></a>P2P结构</h3><p>应用程序在间断连接的主机对之间使用直接通信，成为对等方。</p>
+<p>eg：文件共享（BitTorrent）、迅雷、因特网电话(Skype)，IPTV </p>
+<p>自扩展性好。</p>
+<p>三个挑战：</p>
+<ul>
+<li>ISP友好</li>
+<li>安全性</li>
+<li>激励</li>
+</ul>
+<h3 id="混合体"><a href="#混合体" class="headerlink" title="混合体"></a>混合体</h3><p>Napster</p>
+<ul>
+<li>文件搜索：集中</li>
+<li>文件传输：P2P</li>
+</ul>
+<p>即时通信</p>
+<p><strong>进程</strong>：进行通信</p>
+<p>在两个不同端系统上的进程，通过跨越计算机网络交换报文相互通信。</p>
+<p>对于p2p，下载文件的等待方标识为客户，上载方为服务器</p>
+<p>在给定的一对进程之间的通信会话场景中，发起通信的进程为客户，在会话开始时等待联系的是服务器。</p>
+<p><strong>套接字</strong>：进程通过套接字（软件接口）向网络发送报文和从网络接收报文。</p>
+<p>主机由IP地址标识，目的地端口号指定运行在接受主机上的接收进程。</p>
+<p>Web服务器80号端口，邮件服务器进程(使用SMTP协议)25号端口</p>
+<p>应用程序服务要求：</p>
+<ul>
+<li>可靠数据传输</li>
+<li>吞吐量 带宽敏感的应用</li>
+<li>定时</li>
+<li>安全性</li>
+</ul>
+<h3 id="TCP服务"><a href="#TCP服务" class="headerlink" title="TCP服务"></a>TCP服务</h3><p>运输层协议</p>
+<p>包括面向连接和可靠数据传输服务</p>
+<p>无加密机制，SSL安全套接字层（在应用层）</p>
+<p>拥塞控制</p>
+<p>流量控制</p>
+<h3 id="UDP服务"><a href="#UDP服务" class="headerlink" title="UDP服务"></a>UDP服务</h3><p>运输层协议</p>
+<p>不提供不必要服务的轻量级运输协议，仅提供最小服务，是无连接的，因此在两个进程通信前没有握手过程。不可靠数据传送服务。</p>
+<p>无拥塞控制</p>
+<p>套接字是2元组的一个具有本地意义的标识，IP， port(源端指定)</p>
+<p>没有拥塞控制和流量控制，应用能够按照设定的速度发送数据</p>
+<p>而在TCP上面的应用，应用发送数据的速度和主机向网络发送的实际速度是不一致的，因为有流量控制和拥塞控制。</p>
+<p>均不提供任何定时或者带宽保证</p>
+<p><img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231007204153804.png" alt="image-20231007204153804"></p>
+<h3 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h3><p>定义了交换的报文类型，如请求和响应</p>
+<p>各种报文类型的语法，</p>
+<p>字段的语义</p>
+<p>一个进程何时以及如何发送报文，对报文进行相应的规则。</p>
+<p>是网络应用的一部分</p>
+<h2 id="2-2-Web和Http"><a href="#2-2-Web和Http" class="headerlink" title="2.2  Web和Http"></a>2.2  Web和Http</h2><p>Web页：由一些对象组成</p>
+<p>对象可以是HTML文件、JPEG图像、Java小程序、声音剪辑文件等</p>
+<p>Web页含有一个基本的HTML文件，该基本HTML文件又包含若干对象的引用（链接）</p>
+<p>通过URL对每个对象进行引用</p>
+<p>访问协议，用户名，口令字，端口等；</p>
+<p>URL格式:</p>
+<p><img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231007205501234.png" alt="image-20231007205501234"></p>
+<h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>Web的应用层协议超文本传输协议，是Web的核心</p>
+<p>HTTP使用TCP作为它的支撑运输协议</p>
+<ul>
+<li><p>客户发起一个与服务器的TCP连接(建立套接字) ，端口号为80</p>
+</li>
+<li><p>服务器接受客户的TCP连接</p>
+</li>
+<li><p>在浏览器(HTTP客户端)与Web服务器(HTTP服务器server)交换HTTP报文(应用层协议报文)</p>
+</li>
+<li><p>TCP连接关闭</p>
+</li>
+</ul>
+<p>HTTP是无状态的 服务器并不维护关于客户的任何信息</p>
+<p>维护状态的协议很复杂！</p>
+<ul>
+<li><p>必须维护历史信息(状态)</p>
+</li>
+<li><p>如果服务器&#x2F;客户端死机，它们的状态信息可能不一致，二者的信息必须是一致</p>
+</li>
+<li><p>无状态的服务器能够支持更多的客户端</p>
+</li>
+</ul>
+<p>HTTP连接</p>
+<ul>
+<li>非持久HTTP<ul>
+<li>最多只有一个对象在TCP连接上发送</li>
+<li>下载多个对象需要多个TCP连接</li>
+<li>HTTP&#x2F;1.0使用非持久连接</li>
+</ul>
+</li>
+<li>持久HTTP<ul>
+<li>多个对象可以在一个（在客户端和服务器之间的）TCP连接上传输</li>
+<li>HTTP&#x2F;1.1 默认使用持久连接</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
     
@@ -223,13 +323,6 @@
 
 
         
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2023/10/07/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
       </footer>
     
   </article>
@@ -287,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="nav-number">1.</span> <span class="nav-text">第二章 传输层</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="nav-number">1.</span> <span class="nav-text">第二章 传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">2.1 应用层协议原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-S%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.1.</span> <span class="nav-text">C&#x2F;S结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#P2P%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.2.</span> <span class="nav-text">P2P结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E4%BD%93"><span class="nav-number">1.1.3.</span> <span class="nav-text">混合体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.1.4.</span> <span class="nav-text">TCP服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.1.5.</span> <span class="nav-text">UDP服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.1.6.</span> <span class="nav-text">应用层协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Web%E5%92%8CHttp"><span class="nav-number">1.2.</span> <span class="nav-text">2.2  Web和Http</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">1.2.1.</span> <span class="nav-text">HTTP</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -303,7 +396,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
