@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-08 17:01:13 / 修改时间：23:36:24" itemprop="dateCreated datePublished" datetime="2023-10-08T17:01:13+08:00">2023-10-08</time>
+              <time title="创建时间：2023-10-08 17:01:13 / 修改时间：23:41:25" itemprop="dateCreated datePublished" datetime="2023-10-08T17:01:13+08:00">2023-10-08</time>
             </span>
 
           
@@ -209,27 +209,27 @@
 
       
           <h1 id="Class-2-逻辑回归"><a href="#Class-2-逻辑回归" class="headerlink" title="Class 2 逻辑回归"></a>Class 2 逻辑回归</h1><h4 id="二元分类"><a href="#二元分类" class="headerlink" title="二元分类"></a>二元分类</h4><p>这种只有两种可能输出的分类问题称为二元分类。</p>
-<h4 id="sigmoid-函数"><a href="#sigmoid-函数" class="headerlink" title="sigmoid 函数"></a>sigmoid 函数</h4><p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008173829773.png" alt="image-20231008173829773"></p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008173915794.png" alt="image-20231008173915794"></p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008174151181.png" alt="image-20231008174151181">             <img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008174227410.png" alt="image-20231008174227410"></p>
+<h4 id="sigmoid-函数"><a href="#sigmoid-函数" class="headerlink" title="sigmoid 函数"></a>sigmoid 函数</h4><p><img src="/2023/10/08/MachineLearningAndrew/image-20231008173829773.png" alt="image-20231008173829773"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008173915794.png" alt="image-20231008173915794"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008174151181.png" alt="image-20231008174151181">             <img src="/2023/10/08/MachineLearningAndrew/image-20231008174227410.png" alt="image-20231008174227410"></p>
 <p>输入特征，输出0到1</p>
 <h4 id="决策边界"><a href="#决策边界" class="headerlink" title="决策边界"></a>决策边界</h4><p>线性or非线性</p>
 <h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>平方误差成本函数不是逻辑回归的理想成本函数。</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008205513401.png" alt="image-20231008205513401"></p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008205613800.png" alt="image-20231008205613800"></p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008205638121.png" alt="image-20231008205638121"></p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008205807667.png" alt="image-20231008205807667"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008205513401.png" alt="image-20231008205513401"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008205613800.png" alt="image-20231008205613800"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008205638121.png" alt="image-20231008205638121"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008205807667.png" alt="image-20231008205807667"></p>
 <p>请记住，损失函数衡量的是你在一个训练样例上的表现如何，它是通过总结你随后获得的所有训练样例的损失，成本函数衡量你在整个训练集上的表现。</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008210426343.png" alt="image-20231008210426343"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008210426343.png" alt="image-20231008210426343"></p>
 <p>整体成本函数为凸函数，可以获得全局最小值</p>
 <p>简化损失函数</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008211105952.png" alt="image-20231008211105952"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211105952.png" alt="image-20231008211105952"></p>
 <p>代价函数</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008211415275.png" alt="image-20231008211415275"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211415275.png" alt="image-20231008211415275"></p>
 <p>使用最大似然估计推导出来，是凸函数</p>
-<h4 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h4><p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008211755913.png" alt="image-20231008211755913"></p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008211932119.png" alt="image-20231008211932119"></p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008211950319.png" alt="image-20231008211950319"></p>
+<h4 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h4><p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211755913.png" alt="image-20231008211755913"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211932119.png" alt="image-20231008211932119"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211950319.png" alt="image-20231008211950319"></p>
 <p>Same concepts:</p>
 <ul>
 <li>Monitor gradient descent(learning curve)</li>
@@ -243,13 +243,13 @@
 <p>正则化 Regularization 正则化是一种更温和地减少某些特征影响的方法，而不用像彻底消除它那样严厉。</p>
 <p>那么正则化的作用是，它可以让你保留所有特征，但它们只是防止特征产生过大的影响，而这有时会导致过度拟合。</p>
 <h4 id="正则化-Regularization"><a href="#正则化-Regularization" class="headerlink" title="正则化 Regularization"></a>正则化 Regularization</h4><p>λ正则化参数</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008223908932.png" alt="image-20231008223908932"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008223908932.png" alt="image-20231008223908932"></p>
 <p>正则化线性回归</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008224030737.png" alt="image-20231008224030737"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008224030737.png" alt="image-20231008224030737"></p>
 <p>梯度下降</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008224109310.png" alt="image-20231008224109310"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008224109310.png" alt="image-20231008224109310"></p>
 <p>正则化逻辑回归</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/.%5CMachineLearningAndrew%5Cimage-20231008225551317.png" alt="image-20231008225551317"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008225551317.png" alt="image-20231008225551317"></p>
 
       
     </div>
@@ -294,7 +294,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-08 17:01:11 / 修改时间：23:35:57" itemprop="dateCreated datePublished" datetime="2023-10-08T17:01:11+08:00">2023-10-08</time>
+              <time title="创建时间：2023-10-08 17:01:11 / 修改时间：23:40:48" itemprop="dateCreated datePublished" datetime="2023-10-08T17:01:11+08:00">2023-10-08</time>
             </span>
 
           
@@ -317,9 +317,9 @@
 <ul>
 <li>加一个头节点</li>
 </ul>
-<img src="/2023/10/08/DataStruction/DataStruction\image-20231008171101380.png" alt="image-20231008171101380" style="zoom:80%;">
+<img src="/2023/10/08/DataStruction/image-20231008171101380.png" alt="image-20231008171101380" style="zoom:80%;">
 
-<img src="/2023/10/08/DataStruction/DataStruction\image-20231008171509750.png" alt="image-20231008171509750" style="zoom:70%;">
+<img src="/2023/10/08/DataStruction/image-20231008171509750.png" alt="image-20231008171509750" style="zoom:70%;">
 
 <h1 id="第三讲-树"><a href="#第三讲-树" class="headerlink" title="第三讲 树"></a>第三讲 树</h1><h2 id="3-1-树的定义"><a href="#3-1-树的定义" class="headerlink" title="3.1 树的定义"></a>3.1 树的定义</h2><h3 id="3-1-1-查找"><a href="#3-1-1-查找" class="headerlink" title="3.1.1 查找"></a>3.1.1 查找</h3><p>查找:根据某个给定关键字K,从集合R中找出关键字与K相同的记录</p>
 <ul>
@@ -333,13 +333,13 @@
 </li>
 </ul>
 <h3 id="3-1-2-静态查找"><a href="#3-1-2-静态查找" class="headerlink" title="3.1.2 静态查找"></a>3.1.2 静态查找</h3><h4 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h4><p>利用哨兵，时间复杂度为O(n)</p>
-<p><img src="/2023/10/08/DataStruction/.%5CDataStruction%5Cimage-20231008194902387.png" alt="image-20231008194902387"></p>
+<p><img src="/2023/10/08/DataStruction/image-20231008194902387.png" alt="image-20231008194902387"></p>
 <h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>假设n个数据元素的关键字满足有序（比如:小到大)</p>
 <p>并且是连续存放（数组)，那么可以进行二分查找。</p>
-<p> <img src="/2023/10/08/DataStruction/.%5CDataStruction%5Cimage-20231008200450402.png" alt="image-20231008200450402"></p>
+<p> <img src="/2023/10/08/DataStruction/image-20231008200450402.png" alt="image-20231008200450402"></p>
 <p>二分查找算法具有对数的时间复杂度O(logN)</p>
 <p>二分查找判定树</p>
-<p><img src="/2023/10/08/DataStruction/.%5CDataStruction%5Cimage-20231008201408322.png" alt="image-20231008201408322"></p>
+<p><img src="/2023/10/08/DataStruction/image-20231008201408322.png" alt="image-20231008201408322"></p>
 <p>判定树上每个结点需要的查找次数刚好为该结点所在的层数;</p>
 <p>查找成功时查找次数不会超过判定树的深度</p>
 <p>n个结点的判定树的深度为[log_2_n]+1.</p>
@@ -373,7 +373,7 @@
 <li>FirstChild 指向第一个儿子</li>
 <li>NextSibling 指向下一个兄弟</li>
 </ul>
-<p><img src="/2023/10/08/DataStruction/.%5CDataStruction%5Cimage-20231008204528987.png" alt="image-20231008204528987"></p>
+<p><img src="/2023/10/08/DataStruction/image-20231008204528987.png" alt="image-20231008204528987"></p>
 
       
     </div>
@@ -492,7 +492,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-08 23:34:55" itemprop="dateModified" datetime="2023-10-08T23:34:55+08:00">2023-10-08</time>
+                <time title="修改时间：2023-10-08 23:40:15" itemprop="dateModified" datetime="2023-10-08T23:40:15+08:00">2023-10-08</time>
               </span>
 
           
@@ -554,7 +554,7 @@
 <p>没有拥塞控制和流量控制，应用能够按照设定的速度发送数据</p>
 <p>而在TCP上面的应用，应用发送数据的速度和主机向网络发送的实际速度是不一致的，因为有流量控制和拥塞控制。</p>
 <p>均不提供任何定时或者带宽保证</p>
-<p><img src="/2023/10/07/ComputerNetwork/.%5CComputerNetwork%5Cimage-20231007204153804.png" alt="image-20231007204153804"></p>
+<p><img src="/2023/10/07/ComputerNetwork/image-20231007204153804.png" alt="image-20231007204153804"></p>
 <h3 id="应用层协议"><a href="#应用层协议" class="headerlink" title="应用层协议"></a>应用层协议</h3><p>定义了交换的报文类型，如请求和响应</p>
 <p>各种报文类型的语法，</p>
 <p>字段的语义</p>
@@ -566,7 +566,7 @@
 <p>通过URL对每个对象进行引用</p>
 <p>访问协议，用户名，口令字，端口等；</p>
 <p>URL格式:</p>
-<p><img src="/2023/10/07/ComputerNetwork/.%5CComputerNetwork%5Cimage-20231007205501234.png" alt="image-20231007205501234"></p>
+<p><img src="/2023/10/07/ComputerNetwork/image-20231007205501234.png" alt="image-20231007205501234"></p>
 <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>Web的应用层协议超文本传输协议，是Web的核心</p>
 <p>HTTP使用TCP作为它的支撑运输协议</p>
 <ul>
@@ -660,8 +660,8 @@
 <li>方法：GET</li>
 <li>输入通过请求行的URL字段上载</li>
 </ul>
-<p><img src="/2023/10/07/ComputerNetwork/.%5CComputerNetwork%5Cimage-20231008085512906.png" alt="image-20231008085512906"></p>
-<p><img src="/2023/10/07/ComputerNetwork/.%5CComputerNetwork%5Cimage-20231008085558184.png" alt="image-20231008085558184"></p>
+<p><img src="/2023/10/07/ComputerNetwork/image-20231008085512906.png" alt="image-20231008085512906"></p>
+<p><img src="/2023/10/07/ComputerNetwork/image-20231008085558184.png" alt="image-20231008085558184"></p>
 <h4 id="方法类型"><a href="#方法类型" class="headerlink" title="方法类型"></a>方法类型</h4><p>HTTP&#x2F;1.0</p>
 <ul>
 <li>GET</li>
@@ -683,7 +683,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h4><p><img src="/2023/10/07/ComputerNetwork/.%5CComputerNetwork%5Cimage-20231008091022857.png" alt="image-20231008091022857"></p>
+<h4 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h4><p><img src="/2023/10/07/ComputerNetwork/image-20231008091022857.png" alt="image-20231008091022857"></p>
 <p>初始状态行：协议版本字段、状态码、相应状态信息</p>
 <p>首部行：服务器用Connection: close首部行告诉客户，发送完报文后将关闭该TCP连接。</p>
 <p>Date:首部行指示服务器产生并发送该响应报文的日期和时间。值得一提的是，这个时间不是指对象创建或者最后修改的时间;而是服务器从它的文件系统中检索到该对象,插入到响应报文,并发送该响应报文的时间。</p>
@@ -891,7 +891,7 @@
 <li>MIME:多媒体邮件扩展(multimedia mail extension)RFC 2045,2056</li>
 <li>在报文首部用额外的行申明MIME内容类型</li>
 </ul>
-<p><img src="/2023/10/07/ComputerNetwork/.%5CComputerNetwork%5Cimage-20231008151830276.png" alt="image-20231008151830276"></p>
+<p><img src="/2023/10/07/ComputerNetwork/image-20231008151830276.png" alt="image-20231008151830276"></p>
 <h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1>
       
     </div>
