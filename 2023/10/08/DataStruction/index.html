@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="线性结构逆转 Reversing Linked List抽象的链表  有块地方存数据 有块地方存指针——下一个结点的地址  单链表的逆转  加一个头节点      第三讲 树3.1 树的定义3.1.1 查找查找:根据某个给定关键字K,从集合R中找出关键字与K相同的记录  静态查找:集合中记录是固定的 没有插入和删除操作，只有查找   动态查找:集合中记录是动态变化的 除查找，还可能发生插入和删除">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Data Struction">
+<meta property="og:url" content="http://example.com/2023/10/08/DataStruction/index.html">
+<meta property="og:site_name" content="枫叶苑">
+<meta property="og:description" content="线性结构逆转 Reversing Linked List抽象的链表  有块地方存数据 有块地方存指针——下一个结点的地址  单链表的逆转  加一个头节点      第三讲 树3.1 树的定义3.1.1 查找查找:根据某个给定关键字K,从集合R中找出关键字与K相同的记录  静态查找:集合中记录是固定的 没有插入和删除操作，只有查找   动态查找:集合中记录是动态变化的 除查找，还可能发生插入和删除">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008171101380.png">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008171509750.png">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008194902387.png">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008200450402.png">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008201408322.png">
+<meta property="og:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008204528987.png">
+<meta property="article:published_time" content="2023-10-08T09:01:11.711Z">
+<meta property="article:modified_time" content="2023-10-08T15:02:08.581Z">
+<meta property="article:author" content="枫叶">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008171101380.png">
+
+<link rel="canonical" href="http://example.com/2023/10/08/DataStruction/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Data Struction | 枫叶苑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">枫叶苑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/08/DataStruction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="枫叶">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫叶苑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Data Struction
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-10-08 17:01:11 / 修改时间：23:02:08" itemprop="dateCreated datePublished" datetime="2023-10-08T17:01:11+08:00">2023-10-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="线性结构逆转-Reversing-Linked-List"><a href="#线性结构逆转-Reversing-Linked-List" class="headerlink" title="线性结构逆转 Reversing Linked List"></a>线性结构逆转 Reversing Linked List</h1><p>抽象的链表</p>
+<ul>
+<li>有块地方存数据</li>
+<li>有块地方存指针——下一个结点的地址</li>
+</ul>
+<p>单链表的逆转</p>
+<ul>
+<li>加一个头节点</li>
+</ul>
+<img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008171101380.png" alt="image-20231008171101380" style="zoom:80%;" />
+
+<img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008171509750.png" alt="image-20231008171509750" style="zoom:70%;" />
+
+<h1 id="第三讲-树"><a href="#第三讲-树" class="headerlink" title="第三讲 树"></a>第三讲 树</h1><h2 id="3-1-树的定义"><a href="#3-1-树的定义" class="headerlink" title="3.1 树的定义"></a>3.1 树的定义</h2><h3 id="3-1-1-查找"><a href="#3-1-1-查找" class="headerlink" title="3.1.1 查找"></a>3.1.1 查找</h3><p>查找:根据某个给定关键字K,从集合R中找出关键字与K相同的记录</p>
+<ul>
+<li>静态查找:集合中记录是固定的<ul>
+<li>没有插入和删除操作，只有查找</li>
+</ul>
+</li>
+<li>动态查找:集合中记录是动态变化的<ul>
+<li>除查找，还可能发生插入和删除</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-1-2-静态查找"><a href="#3-1-2-静态查找" class="headerlink" title="3.1.2 静态查找"></a>3.1.2 静态查找</h3><h4 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h4><p>利用哨兵，时间复杂度为O(n)</p>
+<p><img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008194902387.png" alt="image-20231008194902387"></p>
+<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p>假设n个数据元素的关键字满足有序（比如:小到大)</p>
+<p>并且是连续存放（数组)，那么可以进行二分查找。</p>
+<p> <img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008200450402.png" alt="image-20231008200450402"></p>
+<p>二分查找算法具有对数的时间复杂度O(logN)</p>
+<p>二分查找判定树</p>
+<p><img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008201408322.png" alt="image-20231008201408322"></p>
+<p>判定树上每个结点需要的查找次数刚好为该结点所在的层数;</p>
+<p>查找成功时查找次数不会超过判定树的深度</p>
+<p>n个结点的判定树的深度为[log_2_n]+1.</p>
+<h3 id="3-1-3-树的定义"><a href="#3-1-3-树的定义" class="headerlink" title="3.1.3 树的定义"></a>3.1.3 树的定义</h3><p>树（Tree）：n（n≥0）个结点构成的有限集合</p>
+<p>当 n&#x3D;0 时，称为<strong>空树</strong></p>
+<h4 id="1-特征"><a href="#1-特征" class="headerlink" title="1.特征"></a>1.特征</h4><p>对于任一棵非空树（n＞0），它具备以下特征：</p>
+<ul>
+<li>树中有个称为“根（Root）”的特殊结点，用 r 表示</li>
+<li>其余结点可分为 m(m&gt;0) 个互不相交的有限集 T<del>1</del> ，T<del>2</del> ,…, T<del>m</del>,其中每个集合本身又是一棵树，称为原来树的”子树（SubTree）”</li>
+<li>子树是不相交的</li>
+<li>除根结点外，每个结点有且仅有一个父结点</li>
+<li>一棵 N 个结点的树有 N-1 条边</li>
+</ul>
+<h4 id="2-基本术语"><a href="#2-基本术语" class="headerlink" title="2. 基本术语"></a>2. 基本术语</h4><ul>
+<li>结点的度（Degree）：结点的子树个数</li>
+<li>树的度：树的所有结点中最大的度数</li>
+<li>叶结点（Leaf）：度为 0 的结点</li>
+<li>父结点（Parent）：有子树的结点是其子树的根结点的父结点</li>
+<li>子结点（Child）：若 A 结点是 B 结点的父结点，则称 B 结点是 A 结点的子结点，也称孩子结点</li>
+<li>兄弟结点（Sibling）：具有同一父结点的各个结点彼此是兄弟结点</li>
+<li>路径：从结点 n<del>1</del> 到n<del>k</del>  的路径为一个结点序列</li>
+<li>路径长度：路径所包含边的个数</li>
+<li>祖先结点（Ancestor）：沿树根到某一结点路径上的所有结点都是这个结点的祖先结点</li>
+<li>子孙结点（Descendant）：某一结点的子树中的所有结点是这个结点的子孙</li>
+<li>结点的层次（Level）：规定根结点在 1 层，其他任一结点的层数是其父结点的层数加一</li>
+<li>树的深度（Depth）：树中所有结点中的最大层次是这棵树的深度</li>
+</ul>
+<h4 id="3-树的表示"><a href="#3-树的表示" class="headerlink" title="3. 树的表示"></a>3. 树的表示</h4><p>儿子兄弟表示法</p>
+<ul>
+<li>Element 存值</li>
+<li>FirstChild 指向第一个儿子</li>
+<li>NextSibling 指向下一个兄弟</li>
+</ul>
+<p><img src="C:\Users\24592\AppData\Roaming\Typora\typora-user-images\image-20231008204528987.png" alt="image-20231008204528987"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/10/08/C++PrimerPlus/" rel="prev" title="C++ Primer Plus">
+      <i class="fa fa-chevron-left"></i> C++ Primer Plus
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/10/08/MachineLearningAndrew/" rel="next" title="Machine Learning">
+      Machine Learning <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E9%80%86%E8%BD%AC-Reversing-Linked-List"><span class="nav-number">1.</span> <span class="nav-text">线性结构逆转 Reversing Linked List</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E8%AE%B2-%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">第三讲 树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E6%A0%91%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">3.1 树的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-%E6%9F%A5%E6%89%BE"><span class="nav-number">2.1.1.</span> <span class="nav-text">3.1.1 查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-%E9%9D%99%E6%80%81%E6%9F%A5%E6%89%BE"><span class="nav-number">2.1.2.</span> <span class="nav-text">3.1.2 静态查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">顺序查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">二分查找</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-%E6%A0%91%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.1.3 树的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%89%B9%E5%BE%81"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">1.特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">2. 基本术语</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%A0%91%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">3. 树的表示</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="枫叶"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">枫叶</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-10 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">枫叶</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
