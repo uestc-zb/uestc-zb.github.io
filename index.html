@@ -192,10 +192,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-10-08 17:01:13 / 修改时间：23:41:25" itemprop="dateCreated datePublished" datetime="2023-10-08T17:01:13+08:00">2023-10-08</time>
+              <time title="创建时间：2023-10-08 17:01:13" itemprop="dateCreated datePublished" datetime="2023-10-08T17:01:13+08:00">2023-10-08</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-14 23:58:26" itemprop="dateModified" datetime="2023-10-14T23:58:26+08:00">2023-10-14</time>
+              </span>
 
           
 
@@ -208,13 +214,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Class-2-逻辑回归"><a href="#Class-2-逻辑回归" class="headerlink" title="Class 2 逻辑回归"></a>Class 2 逻辑回归</h1><h4 id="二元分类"><a href="#二元分类" class="headerlink" title="二元分类"></a>二元分类</h4><p>这种只有两种可能输出的分类问题称为二元分类。</p>
-<h4 id="sigmoid-函数"><a href="#sigmoid-函数" class="headerlink" title="sigmoid 函数"></a>sigmoid 函数</h4><p><img src="/2023/10/08/MachineLearningAndrew/image-20231008173829773.png" alt="image-20231008173829773"></p>
+          <h1 id="Class-1-有监督机器学习回归和分类"><a href="#Class-1-有监督机器学习回归和分类" class="headerlink" title="Class 1 有监督机器学习回归和分类"></a>Class 1 有监督机器学习回归和分类</h1><h2 id="Week3-逻辑回归"><a href="#Week3-逻辑回归" class="headerlink" title="Week3 逻辑回归"></a>Week3 逻辑回归</h2><h3 id="二元分类"><a href="#二元分类" class="headerlink" title="二元分类"></a>二元分类</h3><p>这种只有两种可能输出的分类问题称为二元分类。</p>
+<h3 id="sigmoid-函数"><a href="#sigmoid-函数" class="headerlink" title="sigmoid 函数"></a>sigmoid 函数</h3><p><img src="/2023/10/08/MachineLearningAndrew/image-20231008173829773.png" alt="image-20231008173829773"></p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008173915794.png" alt="image-20231008173915794"></p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008174151181.png" alt="image-20231008174151181">             <img src="/2023/10/08/MachineLearningAndrew/image-20231008174227410.png" alt="image-20231008174227410"></p>
 <p>输入特征，输出0到1</p>
-<h4 id="决策边界"><a href="#决策边界" class="headerlink" title="决策边界"></a>决策边界</h4><p>线性or非线性</p>
-<h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>平方误差成本函数不是逻辑回归的理想成本函数。</p>
+<h3 id="决策边界"><a href="#决策边界" class="headerlink" title="决策边界"></a>决策边界</h3><p>线性or非线性</p>
+<h3 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h3><p>平方误差成本函数不是逻辑回归的理想成本函数。</p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008205513401.png" alt="image-20231008205513401"></p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008205613800.png" alt="image-20231008205613800"></p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008205638121.png" alt="image-20231008205638121"></p>
@@ -227,7 +233,7 @@
 <p>代价函数</p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211415275.png" alt="image-20231008211415275"></p>
 <p>使用最大似然估计推导出来，是凸函数</p>
-<h4 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h4><p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211755913.png" alt="image-20231008211755913"></p>
+<h3 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h3><p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211755913.png" alt="image-20231008211755913"></p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211932119.png" alt="image-20231008211932119"></p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008211950319.png" alt="image-20231008211950319"></p>
 <p>Same concepts:</p>
@@ -236,20 +242,307 @@
 <li>Vectorized implementation</li>
 <li>Feature scaling</li>
 </ul>
-<h4 id="过拟合与欠拟合"><a href="#过拟合与欠拟合" class="headerlink" title="过拟合与欠拟合"></a>过拟合与欠拟合</h4><p>欠拟合：高偏差 high bias  Does not fit thetraining set well</p>
+<h3 id="过拟合与欠拟合"><a href="#过拟合与欠拟合" class="headerlink" title="过拟合与欠拟合"></a>过拟合与欠拟合</h3><p>欠拟合：高偏差 high bias  Does not fit thetraining set well</p>
 <p>过拟合：高方差 high variance Fits the training setextremely well</p>
-<h4 id="解决过拟合"><a href="#解决过拟合" class="headerlink" title="解决过拟合"></a>解决过拟合</h4><p>收集更多的训练样本</p>
+<h3 id="解决过拟合"><a href="#解决过拟合" class="headerlink" title="解决过拟合"></a>解决过拟合</h3><p>收集更多的训练样本</p>
 <p>选择特征   select features to include&#x2F;exclude</p>
 <p>正则化 Regularization 正则化是一种更温和地减少某些特征影响的方法，而不用像彻底消除它那样严厉。</p>
 <p>那么正则化的作用是，它可以让你保留所有特征，但它们只是防止特征产生过大的影响，而这有时会导致过度拟合。</p>
-<h4 id="正则化-Regularization"><a href="#正则化-Regularization" class="headerlink" title="正则化 Regularization"></a>正则化 Regularization</h4><p>λ正则化参数</p>
+<h3 id="正则化-Regularization"><a href="#正则化-Regularization" class="headerlink" title="正则化 Regularization"></a>正则化 Regularization</h3><p>λ正则化参数</p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008223908932.png" alt="image-20231008223908932"></p>
 <p>正则化线性回归</p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008224030737.png" alt="image-20231008224030737"></p>
 <p>梯度下降</p>
 <p><img src="/2023/10/08/MachineLearningAndrew/image-20231008224109310.png" alt="image-20231008224109310"></p>
 <p>正则化逻辑回归</p>
-<p><img src="/2023/10/08/MachineLearningAndrew/image-20231008225551317.png" alt="image-20231008225551317"></p>
+<h1 id><a href="#" class="headerlink" title></a><img src="/2023/10/08/MachineLearningAndrew/image-20231008225551317.png" alt="image-20231008225551317"></h1><h1 id="Class-3-深度学习"><a href="#Class-3-深度学习" class="headerlink" title="Class 3 深度学习"></a>Class 3 深度学习</h1><h2 id="Week1-神经网络"><a href="#Week1-神经网络" class="headerlink" title="Week1 神经网络"></a>Week1 神经网络</h2><p>输入层 输入为特征向量</p>
+<p>隐藏层</p>
+<p>输出层</p>
+<p><strong>Tensorflow and Keras</strong><br>Tensorflow is a machine learning package developed by Google. In 2019, Google integrated Keras into Tensorflow and released Tensorflow 2.0. Keras is a framework developed independently by François Chollet that creates a simple, layer-centric interface to Tensorflow. This course will be using the Keras interface. </p>
+<p>激活函数g(x)是sigmoid函数</p>
+<p>前向传播算法</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231009222124079.png" alt="image-20231009222124079"></p>
+<p>从左到右向前计算，称为前向传播</p>
+<p>离输出层越近，隐藏层神经元越少</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231009222647437.png" alt="image-20231009222647437"></p>
+<p>两个特征，第一个隐藏层有三个神经元，激活函数为sigmoid，输出为a1，第二层同理</p>
+<p>输入向量要写成二维矩阵形式 x &#x3D; np.array([[200,17]])  1x2矩阵</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231009224920509.png" alt="image-20231009224920509"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231009224946845.png" alt="image-20231009224946845"></p>
+<p>AGI 通用人工智能</p>
+<h2 id="Week2-Tenserflow实现"><a href="#Week2-Tenserflow实现" class="headerlink" title="Week2 Tenserflow实现"></a>Week2 Tenserflow实现</h2><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010125603129.png" alt="image-20231010125603129"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010125701208.png" alt="image-20231010125701208"></p>
+<p>交叉熵损失函数</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010130715345.png" alt="image-20231010130715345"></p>
+<p>回归和分类使用不同的损失代价函数</p>
+<p>梯度下降</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010130841602.png" alt="image-20231010130841602"></p>
+<p>多层感知器：多层神经网路</p>
+<h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><h4 id="ReLU-Activation"><a href="#ReLU-Activation" class="headerlink" title="ReLU Activation"></a>ReLU Activation</h4><p>This week, a new activation was introduced, the Rectified Linear Unit (ReLU).</p>
+<p>𝑎&#x3D;𝑚𝑎𝑥(0,𝑧)# ReLU function<img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010204558837.png" alt="image-20231010204558837"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010204715345.png" alt="image-20231010204715345"></p>
+<p>二分类问题，sigmoid激活函数是最自然的选择，输出层使用</p>
+<p>回归模型，输出有正有负，预测明天的股票价格，输出层使用线性激活函数</p>
+<p>回归模型，输出为非负，预测房屋价格，非负，输出层选择ReLU函数</p>
+<p>隐藏层选择Relu函数，ReLU计算速度更快，效率高，但事实证明更重要的第二个原因是ReLU函数仅在图形的一部分变平;左边这里<br>是完全平坦的，而sigmoid激活函数，它在两个地方变得平坦。梯度下降就会很慢，减慢学习速度</p>
+<p>为什么要使用激活函数？</p>
+<p>若所有层都是用线性激活函数，那就变成了线性回归</p>
+<h3 id="多分类问题"><a href="#多分类问题" class="headerlink" title="多分类问题"></a>多分类问题</h3><h3 id="Softmax函数"><a href="#Softmax函数" class="headerlink" title="Softmax函数"></a>Softmax函数</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010212144511.png" alt="image-20231010212144511"></p>
+<h4 id="代价函数-1"><a href="#代价函数-1" class="headerlink" title="代价函数"></a>代价函数</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010212557352.png" alt="image-20231010212557352"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010220105018.png" alt="image-20231010220105018"></p>
+<h4 id="Tenserflow-实现"><a href="#Tenserflow-实现" class="headerlink" title="Tenserflow 实现"></a>Tenserflow 实现</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010220327241.png" alt="image-20231010220327241"></p>
+<h4 id="改进实现"><a href="#改进实现" class="headerlink" title="改进实现"></a>改进实现</h4><p>避免计算过程中出现过大或者过小值造成计算错误，改进方法在计算过程中进行了重新排列</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010221115720.png" alt="image-20231010221115720"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010221418604.png" alt="image-20231010221418604"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010221520301.png" alt="image-20231010221520301"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010221537117.png" alt="image-20231010221537117"></p>
+<h3 id="多标签分类"><a href="#多标签分类" class="headerlink" title="多标签分类"></a>多标签分类</h3><p>一个神经网络同时检测多个目标</p>
+<h3 id="更快的训练方法"><a href="#更快的训练方法" class="headerlink" title="更快的训练方法"></a>更快的训练方法</h3><h4 id="Adam算法"><a href="#Adam算法" class="headerlink" title="Adam算法"></a>Adam算法</h4><p>自动调节α</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010231015869.png" alt="image-20231010231015869"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010231157191.png" alt="image-20231010231157191"></p>
+<h3 id="其他的网络层"><a href="#其他的网络层" class="headerlink" title="其他的网络层"></a>其他的网络层</h3><p>密集层</p>
+<p>卷积层</p>
+<ul>
+<li><p>更快的计算</p>
+</li>
+<li><p>需要更少的训练数据，不太会过拟合</p>
+</li>
+</ul>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010231710233.png" alt="image-20231010231710233"></p>
+<h3 id="计算图"><a href="#计算图" class="headerlink" title="计算图"></a>计算图</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231010235541548.png" alt="image-20231010235541548"></p>
+<h2 id="Week3-在机器学习项目中下一步该做什么"><a href="#Week3-在机器学习项目中下一步该做什么" class="headerlink" title="Week3 在机器学习项目中下一步该做什么"></a>Week3 在机器学习项目中下一步该做什么</h2><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011083027133.png" alt="image-20231011083027133"></p>
+<h3 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h3><p>训练集分为两个子集</p>
+<p>training set</p>
+<p>test set</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011083802084.png" alt="image-20231011083802084"></p>
+<p>不包含正则化项</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011084012544.png" alt="image-20231011084012544"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011084442975.png" alt="image-20231011084442975"></p>
+<p>就是相比于之前计算在测试集和训练集上误差的那两个公式，我们更常用模型分类错误的次数除以总的预测次数来表示误差</p>
+<p>就是对于逻辑回归来说，可以通过计算误判占比的方法来代表成本函数，比如test set中误判的占比是10％，那么J test就是0.1</p>
+<h4 id="分为三个子集，训练集、交叉验证集、测试集"><a href="#分为三个子集，训练集、交叉验证集、测试集" class="headerlink" title="分为三个子集，训练集、交叉验证集、测试集"></a>分为三个子集，训练集、交叉验证集、测试集</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011091646019.png" alt="image-20231011091646019"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011091757791.png" alt="image-20231011091757791"></p>
+<p>选择最小的交叉验证集误差对应的模型</p>
+<p>用测试集来评估泛化误差</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011092256493.png" alt="image-20231011092256493"></p>
+<h4 id="偏差和方差"><a href="#偏差和方差" class="headerlink" title="偏差和方差"></a>偏差和方差</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011093159868.png" alt="image-20231011093159868"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011093401564.png" alt="image-20231011093401564"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011093433520.png" alt="image-20231011093433520"></p>
+<p>正则化如何影响偏差和方差，从而影响算法的性能</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011093859951.png" alt="image-20231011093859951"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011094124259.png" alt="image-20231011094124259"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011094256539.png" alt="image-20231011094256539"></p>
+<h4 id="指定一个用于性能评估的基准"><a href="#指定一个用于性能评估的基准" class="headerlink" title="指定一个用于性能评估的基准"></a>指定一个用于性能评估的基准</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011103735186.png" alt="image-20231011103735186"></p>
+<p>竞争算法</p>
+<h4 id="学习曲线"><a href="#学习曲线" class="headerlink" title="学习曲线"></a>学习曲线</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011104512509.png" alt="image-20231011104512509"></p>
+<p>训练集变大，误差增大</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011104852894.png" alt="image-20231011104852894"></p>
+<p>这给出了这个结论，也许有点令人惊讶，如果学习算法具有高偏差，获得更多的训<br>练数据本身就没有那么大的希望。</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011105426342.png" alt="image-20231011105426342"></p>
+<p>所以在这种情况下，可能仅仅通过增加训练集的大小来降低交叉验证误差并让你的算法表现得越来越好，这与高偏差情况不同，在这种情况下你唯一要做的就是获得更多的训练数据，实际上并不能帮助您了解算法性能。</p>
+<h4 id="如何改进"><a href="#如何改进" class="headerlink" title="如何改进"></a>如何改进</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011110222504.png" alt="image-20231011110222504"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011110708303.png" alt="image-20231011110708303"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011111707005.png" alt="image-20231011111707005"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011112028987.png" alt="image-20231011112028987"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011112250065.png" alt="image-20231011112250065"></p>
+<h3 id="机器学习开发的迭代"><a href="#机器学习开发的迭代" class="headerlink" title="机器学习开发的迭代"></a>机器学习开发的迭代</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011112605831.png" alt="image-20231011112605831"></p>
+<p>垃圾邮件分类</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011112929003.png" alt="image-20231011112929003"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011113910756.png" alt="image-20231011113910756"></p>
+<h4 id="误差分析"><a href="#误差分析" class="headerlink" title="误差分析"></a>误差分析</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011114442995.png" alt="image-20231011114442995"></p>
+<h4 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h4><p>旋转图像扭曲放大缩小</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011115040740.png" alt="image-20231011115040740"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011115116926.png" alt="image-20231011115116926"></p>
+<p>音频增强 </p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011115211067.png" alt="image-20231011115211067"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011115324412.png" alt="image-20231011115324412"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011131113956.png" alt="image-20231011131113956"></p>
+<h4 id="迁移学习-Transfer-learning"><a href="#迁移学习-Transfer-learning" class="headerlink" title="迁移学习 Transfer  learning"></a>迁移学习 Transfer  learning</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011163140324.png" alt="image-20231011163140324"></p>
+<p>数据集小选择1，数据集大选择二</p>
+<p>先在大的数据集训练（监督与训练），再在小的训练称为微调</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011163230072.png" alt="image-20231011163230072"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011163351440.png" alt="image-20231011163351440"></p>
+<h4 id="机器学习项目全周期"><a href="#机器学习项目全周期" class="headerlink" title="机器学习项目全周期"></a>机器学习项目全周期</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011163931188.png" alt="image-20231011163931188"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011164414049.png" alt="image-20231011164414049"></p>
+<h4 id="倾斜数据集的误差指标"><a href="#倾斜数据集的误差指标" class="headerlink" title="倾斜数据集的误差指标"></a>倾斜数据集的误差指标</h4><p>精确度和召回率</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011165618174.png" alt="image-20231011165618174"></p>
+<p>精度和召回率</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011170439331.png" alt="image-20231011170439331"></p>
+<p>F1score 更强调P和R中较低的那个 调和平均值</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231011170740787.png" alt="image-20231011170740787"></p>
+<h2 id="Week4-决策树"><a href="#Week4-决策树" class="headerlink" title="Week4 决策树"></a>Week4 决策树</h2><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012075401986.png" alt="image-20231012075401986"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012075410387.png" alt="image-20231012075410387"></p>
+<p>根节点 决策节点 叶节点</p>
+<p>决策树学习算法的工作是，从所有可能的决策树中，尝试选择一个希望在训练集上<br>表现良好的树，然后理想地泛化到新数据，例如交叉验证和测试集</p>
+<h3 id="学习过程"><a href="#学习过程" class="headerlink" title="学习过程"></a>学习过程</h3><p>决策树学习的第一步是，我们必须决定在根节点使用什么特征。</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012081611286.png" alt="image-20231012081611286"></p>
+<p>Decision 2: When do you stop splitting?</p>
+<ul>
+<li>When a node is 100% one class</li>
+<li>When splitting a node will result in the tree exceeding a maximum depth</li>
+<li>When improvements in purity score are below a threshold</li>
+<li>When number of examples in a node is below a threshold</li>
+</ul>
+<p>您可能想要限制决策树深度的一个原因是确保我们的树不会变得太大和笨重，其<br>次，通过保持树小，它不太容易过度拟合。</p>
+<h3 id="纯度"><a href="#纯度" class="headerlink" title="纯度"></a>纯度</h3><h4 id="熵-entropy"><a href="#熵-entropy" class="headerlink" title="熵 entropy"></a>熵 entropy</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012082638836.png" alt="image-20231012082638836"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012082823450.png" alt="image-20231012082823450"></p>
+<p>选择拆分信息增益</p>
+<p>减少熵</p>
+<p>信息增益 分之前的熵减去分后熵的加权平均</p>
+<p>停止标准，每次信息增益如果太小停止分类</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012083632353.png" alt="image-20231012083632353"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012083921344.png" alt="image-20231012083921344"></p>
+<h4 id="整合"><a href="#整合" class="headerlink" title="整合"></a>整合</h4><ul>
+<li>Start with all examples at the root node</li>
+<li>Calculate information gain for all possible features, and pick the one with the highest information gain</li>
+<li>Split dataset according to selected feature,and create left and right branches of the tree</li>
+<li>Keep repeating splitting process until stopping criteria is met:<ul>
+<li>when a node is 100% one class</li>
+<li>When splitting a node will result in the tree exceeding a maximum depth</li>
+<li>Information gain from additional splits is less than threshold</li>
+<li>When number of examples in a node is below a threshold</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012084601880.png" alt="image-20231012084601880"></p>
+<p>递归分类</p>
+<h3 id="独热编码-one-hot"><a href="#独热编码-one-hot" class="headerlink" title="独热编码 one-hot"></a>独热编码 one-hot</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012085239987.png" alt="image-20231012085239987"></p>
+<p>通过one-hot编码，您可以让决策树处理可以采用两个以上离散值的特征，您还可以将其应用于新网络或线性回归或逻辑回归训练。</p>
+<p>连续值</p>
+<p>尝试不同的阈值，计算纯度</p>
+<h3 id="回归树"><a href="#回归树" class="headerlink" title="回归树"></a>回归树</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012090404205.png" alt="image-20231012090404205"></p>
+<p>尝试减少方差</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012091154958.png" alt="image-20231012091154958"></p>
+<h3 id="使用多个决策树"><a href="#使用多个决策树" class="headerlink" title="使用多个决策树"></a>使用多个决策树</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012092643280.png" alt="image-20231012092643280"></p>
+<h4 id="有放回的采样"><a href="#有放回的采样" class="headerlink" title="有放回的采样"></a>有放回的采样</h4><p>构建新的数据集，</p>
+<p>Random Forest Algorithm</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012093230276.png" alt="image-20231012093230276"></p>
+<p>Randomizing the feature choice<br>At each node, when choosing a feature to use to split,if n features are available, pick a random subset of k &lt;n features and allow the algorithm to only choose from that subset of features.</p>
+<p>k的选择（根号n，log2(n)）</p>
+<h4 id="XGBoost-extreme-Gradient-Boosting"><a href="#XGBoost-extreme-Gradient-Boosting" class="headerlink" title="XGBoost (extreme Gradient Boosting)"></a>XGBoost (extreme Gradient Boosting)</h4><p>内置正则化防止过度拟合</p>
+<ul>
+<li>Open source implementation of boosted trees</li>
+<li>Fast efficient implementation</li>
+<li>Good choice of default splitting criteria and criteria for when to stop splitting</li>
+<li>Built in regularization to prevent over fitting</li>
+<li>Highly competitive algorithm for machine learning competitions (eg: Kaggle competitions)</li>
+</ul>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012094738491.png" alt="image-20231012094738491"></p>
+<h3 id="何时使用决策树"><a href="#何时使用决策树" class="headerlink" title="何时使用决策树"></a>何时使用决策树</h3><p>表格数据</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012095356821.png" alt="image-20231012095356821"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012095814528.png" alt="image-20231012095814528"></p>
+<h1 id="Class3-无监督学习"><a href="#Class3-无监督学习" class="headerlink" title="Class3 无监督学习"></a>Class3 无监督学习</h1><h2 id="Week1-无监督学习"><a href="#Week1-无监督学习" class="headerlink" title="Week1 无监督学习"></a>Week1 无监督学习</h2><h3 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h3><h4 id="k-means"><a href="#k-means" class="headerlink" title="k-means"></a>k-means</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012125528206.png" alt="image-20231012125528206"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012125536447.png" alt="image-20231012125536447"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012130426099.png" alt="image-20231012130426099"></p>
+<p>如果一个集群训练样本为零，可以消除该集群，最终得到k-1；另一种方法是重新初始化该集群质心</p>
+<h4 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012145049473.png" alt="image-20231012145049473"></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012150757199.png" alt="image-20231012150757199"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012151542672.png" alt="image-20231012151542672"></p>
+<h4 id="选择聚类数量"><a href="#选择聚类数量" class="headerlink" title="选择聚类数量"></a>选择聚类数量</h4><p>肘法</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012151925053.png" alt="image-20231012151925053"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012152146445.png" alt="image-20231012152146445"></p>
+<h3 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012152706177.png" alt="image-20231012152706177"></p>
+<h4 id="密度估计"><a href="#密度估计" class="headerlink" title="密度估计"></a>密度估计</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012152845235.png" alt="image-20231012152845235"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012153346742.png" alt="image-20231012153346742"></p>
+<h4 id="高斯正态分布"><a href="#高斯正态分布" class="headerlink" title="高斯正态分布"></a>高斯正态分布</h4><p>最大似然估计</p>
+<h4 id="异常检测算法"><a href="#异常检测算法" class="headerlink" title="异常检测算法"></a>异常检测算法</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012154133115.png" alt="image-20231012154133115"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012154923207.png" alt="image-20231012154923207"></p>
+<h4 id="开发与评估异常检测系统"><a href="#开发与评估异常检测系统" class="headerlink" title="开发与评估异常检测系统."></a>开发与评估异常检测系统.</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012215712447.png" alt="image-20231012215712447"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231012220215931.png" alt="image-20231012220215931"></p>
+<p>这种替代方案的缺点是，在调整算法后，您没有公平的方法来判断它在未来示例中的实际效果如何，因为您没有测试集。</p>
+<p>当你的数据集很小的时候，特别是当你有异常的数量时，你的数据集很小，这可能是你最好的选择。</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013082659472.png" alt="image-20231013082659472"></p>
+<h4 id="异常检测vs监督学习"><a href="#异常检测vs监督学习" class="headerlink" title="异常检测vs监督学习"></a>异常检测vs监督学习</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013084827450.png" alt="image-20231013084827450"></p>
+<p>例子</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013084924028.png" alt="image-20231013084924028"></p>
+<h4 id="选择用什么特征"><a href="#选择用什么特征" class="headerlink" title="选择用什么特征"></a>选择用什么特征</h4><p>特征改变为高斯分布</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013085546244.png" alt="image-20231013085546244"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013090207839.png" alt="image-20231013090207839"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013090413780.png" alt="image-20231013090413780"></p>
+<h2 id="Week2-推荐系统"><a href="#Week2-推荐系统" class="headerlink" title="Week2 推荐系统"></a>Week2 推荐系统</h2><h3 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h3><h4 id="使用每个特征数据"><a href="#使用每个特征数据" class="headerlink" title="使用每个特征数据"></a>使用每个特征数据</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013091417801.png" alt="image-20231013091417801"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013092525171.png" alt="image-20231013092525171"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013092709205.png" alt="image-20231013092709205"></p>
+<h4 id="协同过滤算法"><a href="#协同过滤算法" class="headerlink" title="协同过滤算法"></a>协同过滤算法</h4><p>假设已经有了w和b，猜测特征x</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013093541589.png" alt="image-20231013093541589"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013094256436.png" alt="image-20231013094256436"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013094536963.png" alt="image-20231013094536963"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013095022269.png" alt="image-20231013095022269"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013095116749.png" alt="image-20231013095116749"></p>
+<p>这种协同过滤是从多个用户收集数据，用户之间的这种协作可帮助您预测未来甚至其他用户的评级。</p>
+<p>推荐系统的一个非常常见的用例是当您有二进制标签时，例如用户喜欢、喜欢或与项目交互的标签。</p>
+<h4 id="二进制标签"><a href="#二进制标签" class="headerlink" title="二进制标签"></a>二进制标签</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013095506383.png" alt="image-20231013095506383"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013095650568.png" alt="image-20231013095650568"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013095901608.png" alt="image-20231013095901608"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013100113430.png" alt="image-20231013100113430"></p>
+<p>分类不用正则化</p>
+<h4 id="均值归一化"><a href="#均值归一化" class="headerlink" title="均值归一化"></a>均值归一化</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013143727458.png" alt="image-20231013143727458"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013144130791.png" alt="image-20231013144130791"></p>
+<p>对未知用户，预测评分为均值</p>
+<h4 id="协同过滤Tensorflow实现"><a href="#协同过滤Tensorflow实现" class="headerlink" title="协同过滤Tensorflow实现"></a>协同过滤Tensorflow实现</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013144725579.png" alt="image-20231013144725579"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013144803015.png" alt="image-20231013144803015"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013145539351.png" alt="image-20231013145539351"></p>
+<h4 id="寻找相关特征"><a href="#寻找相关特征" class="headerlink" title="寻找相关特征"></a>寻找相关特征</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013145951931.png" alt="image-20231013145951931"></p>
+<p>协同过滤的局限性</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013150021292.png" alt="image-20231013150021292"></p>
+<p>冷启动问题</p>
+<p>边缘信息</p>
+<h4 id="基于内容的过滤算法"><a href="#基于内容的过滤算法" class="headerlink" title="基于内容的过滤算法"></a>基于内容的过滤算法</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013150639264.png" alt="image-20231013150639264"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013150936617.png" alt="image-20231013150936617"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013151110932.png" alt="image-20231013151110932"></p>
+<p>如何计算V</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013151407807.png" alt="image-20231013151407807"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013151905392.png" alt="image-20231013151905392"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013152534237.png" alt="image-20231013152534237"></p>
+<h4 id="从大型目录中推荐"><a href="#从大型目录中推荐" class="headerlink" title="从大型目录中推荐"></a>从大型目录中推荐</h4><p>两个步骤：检索和排名</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013152823434.png" alt="image-20231013152823434"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013153036731.png" alt="image-20231013153036731"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013153343967.png" alt="image-20231013153343967"></p>
+<h4 id="基于内容的Tensorflow实现"><a href="#基于内容的Tensorflow实现" class="headerlink" title="基于内容的Tensorflow实现"></a>基于内容的Tensorflow实现</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013154612258.png" alt="image-20231013154612258"></p>
+<h4 id="降低特征数量"><a href="#降低特征数量" class="headerlink" title="降低特征数量"></a>降低特征数量</h4><p>PCA主成分分析法，特征降为二维或者三维，便于可视化</p>
+<h4 id="PCA算法"><a href="#PCA算法" class="headerlink" title="PCA算法"></a>PCA算法</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013170727751.png" alt="image-20231013170727751"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013171217861.png" alt="image-20231013171217861"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013171447596.png" alt="image-20231013171447596"></p>
+<p>当使用线性回归来预测目标输出Y并且PCA试图获取大量特征并平等对待它们并减少很好地表示数据所需的轴数</p>
+<p>因此，如果您尝试预测y的值，则应使用线性回归;如果您尝试减少数据集中的特征数量，例如将其可视化，则应使用PCA。</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013172253829.png" alt="image-20231013172253829"></p>
+<p>每个特征的方差贡献率</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013172530272.png" alt="image-20231013172530272"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013172923497.png" alt="image-20231013172923497"></p>
+<h2 id="Week3-强化学习"><a href="#Week3-强化学习" class="headerlink" title="Week3 强化学习"></a>Week3 强化学习</h2><h3 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h3><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013185527334.png" alt="image-20231013185527334"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013185513926.png" alt="image-20231013185513926"></p>
+<p>状态、动作、奖励和下一个状态（s，a，R（s），s‘)</p>
+<h4 id="回报"><a href="#回报" class="headerlink" title="回报"></a>回报</h4><p>折扣因子</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013191147456.png" alt="image-20231013191147456"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013191515723.png" alt="image-20231013191515723"></p>
+<h4 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h4><p>pi</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013191936751.png" alt="image-20231013191936751"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013192130503.png" alt="image-20231013192130503"></p>
+<p>马尔可夫决策过程</p>
+<p>在马尔可夫决策过程中，未来只取决于你现在所处的位置，而不取决于你是如何到达这里的。</p>
+<h4 id="状态-动作价值函数"><a href="#状态-动作价值函数" class="headerlink" title="状态-动作价值函数"></a>状态-动作价值函数</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013214059896.png" alt="image-20231013214059896"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013214515098.png" alt="image-20231013214515098"></p>
+<h4 id="贝尔曼方程"><a href="#贝尔曼方程" class="headerlink" title="贝尔曼方程"></a>贝尔曼方程</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013220256063.png" alt="image-20231013220256063"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013221245911.png" alt="image-20231013221245911"></p>
+<p>如果你从状态s 开始，你将采取行动a，然后在此之后采取最佳行动，那么你将随着时间的推移看到一些奖励序列。</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013221652384.png" alt="image-20231013221652384"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013221916868.png" alt="image-20231013221916868"></p>
+<h4 id="随机强化学习"><a href="#随机强化学习" class="headerlink" title="随机强化学习"></a>随机强化学习</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013222607911.png" alt="image-20231013222607911"></p>
+<h4 id="连续状态"><a href="#连续状态" class="headerlink" title="连续状态"></a>连续状态</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013222846102.png" alt="image-20231013222846102"></p>
+<p>连续马尔可夫 MTP</p>
+<h4 id="学习状态值函数"><a href="#学习状态值函数" class="headerlink" title="学习状态值函数"></a>学习状态值函数</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013223922575.png" alt="image-20231013223922575"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013224639866.png" alt="image-20231013224639866"></p>
+<p>不知道Q，随机猜测</p>
+<h4 id="DQN-p146"><a href="#DQN-p146" class="headerlink" title="DQN  p146"></a>DQN  p146</h4><p>意思是神经网络里的参数随机初始化，然后(s’,a’)输入，得到maxQ的预测</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013225256166.png" alt="image-20231013225256166"></p>
+<p>交给神经网络训练的参数y中一部分是随机初始化神经网络生成的，但还有一部分是包含了当前状态的信息的，所以当训练次数增多后，外部的输入信息会逐步冲刷掉初始化的随机信息，给出真正的Q函数估计</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013225733542.png" alt="image-20231013225733542"></p>
+<h4 id="贪婪算法"><a href="#贪婪算法" class="headerlink" title="贪婪算法"></a>贪婪算法</h4><p>使用高ε开始，逐步降低直到0.01</p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013230506858.png" alt="image-20231013230506858"></p>
+<h4 id="小批量和软更新"><a href="#小批量和软更新" class="headerlink" title="小批量和软更新"></a>小批量和软更新</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013230853479.png" alt="image-20231013230853479"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013231149426.png" alt="image-20231013231149426"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013231255361.png" alt="image-20231013231255361"></p>
+<p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013231653864.png" alt="image-20231013231653864"></p>
+<h4 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h4><p><img src="/2023/10/08/MachineLearningAndrew/Blog\source_posts\MachineLearningAndrew\image-20231013232030585.png" alt="image-20231013232030585"></p>
 
       
     </div>
@@ -492,7 +785,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-08 23:40:15" itemprop="dateModified" datetime="2023-10-08T23:40:15+08:00">2023-10-08</time>
+                <time title="修改时间：2023-10-09 21:31:27" itemprop="dateModified" datetime="2023-10-09T21:31:27+08:00">2023-10-09</time>
               </span>
 
           
@@ -892,6 +1185,128 @@
 <li>在报文首部用额外的行申明MIME内容类型</li>
 </ul>
 <p><img src="/2023/10/07/ComputerNetwork/image-20231008151830276.png" alt="image-20231008151830276"></p>
+<h3 id="邮件访问协议"><a href="#邮件访问协议" class="headerlink" title="邮件访问协议"></a>邮件访问协议</h3><p>SMTP:传送到接收方的邮件服务器</p>
+<p>邮件访问协议:从服务器访问邮件</p>
+<ul>
+<li>POP:邮局访问协议(Post Office Protocol&gt;[RFC 1939]<ul>
+<li>用户身份确认(代理&lt;–&gt;服务器)并下载</li>
+</ul>
+</li>
+<li>IMAP: Internet邮件访问协议( Internet Mail AccessProtocol[RFC 1730]<ul>
+<li>更多特性(更复杂)</li>
+<li>在服务器上处理存储的报文</li>
+</ul>
+</li>
+<li>HTTP: Hotmail , yahoo! Mail等<ul>
+<li>方便</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2023/10/07/ComputerNetwork/Blog\source_posts\ComputerNetwork\image-20231009202619364.png" alt="image-20231009202619364"></p>
+<h4 id="POP3协议"><a href="#POP3协议" class="headerlink" title="POP3协议"></a>POP3协议</h4><p>用户确认阶段</p>
+<ul>
+<li><p>客户端命令：</p>
+<ul>
+<li>user:申明用户名</li>
+<li>pass : 口令</li>
+</ul>
+</li>
+<li><p>服务器响应</p>
+<ul>
+<li>+OK</li>
+<li>-ERR</li>
+</ul>
+</li>
+</ul>
+<p>事务处理阶段</p>
+<ul>
+<li>list:报文号列表</li>
+<li>retr:根据报文号检索报文</li>
+<li>dele:删除</li>
+<li>quit</li>
+</ul>
+<p>先前的例子使用“下载并删除”模式。</p>
+<ul>
+<li>如果改变客户机，Bob不能阅读邮件</li>
+<li>“下载并保留”:不同客户机上为报文的拷贝</li>
+<li>POP3在会话中是无状态的</li>
+</ul>
+<p>本地管理文件夹</p>
+<h4 id="IMAP"><a href="#IMAP" class="headerlink" title="IMAP"></a>IMAP</h4><ul>
+<li>IMAP服务器将每个报文与一个文件夹联系起来</li>
+<li>允许用户用目录来组织报文</li>
+<li>允许用户读取报文组件</li>
+<li>IMAP在会话过程中保留用户状态:<ul>
+<li>目录名、报文ID与目录名之间映射</li>
+</ul>
+</li>
+</ul>
+<p>远程管理文件夹</p>
+<h2 id="2-5-DNS"><a href="#2-5-DNS" class="headerlink" title="2.5 DNS"></a>2.5 DNS</h2><p>Domain Name System</p>
+<h3 id="Dns的必要性"><a href="#Dns的必要性" class="headerlink" title="Dns的必要性"></a>Dns的必要性</h3><ul>
+<li>IP地址标识主机、路由器</li>
+<li>但IP地址不好记忆，不便人类使用(没有意义)</li>
+<li>人类一般倾向于使用一些有意义的字符串来标识Internet上的设备<ul>
+<li>例如: <a href="mailto:&#x71;&#122;&#104;&#x65;&#110;&#103;&#x40;&#117;&#x73;&#116;&#x63;&#46;&#x65;&#100;&#117;&#x2e;&#99;&#110;">&#x71;&#122;&#104;&#x65;&#110;&#103;&#x40;&#117;&#x73;&#116;&#x63;&#46;&#x65;&#100;&#117;&#x2e;&#99;&#110;</a>所在的邮件服务器</li>
+<li><a target="_blank" rel="noopener" href="http://www.ustc.edu.cn所在的web服务器/">www.ustc.edu.cn所在的web服务器</a></li>
+</ul>
+</li>
+<li>存在着“字符串”—IP地址的转换的必要性</li>
+<li>人类用户提供要访问机器的“字符串”名称</li>
+<li>由DNS负责转换成为二进制的网络地址</li>
+</ul>
+<h3 id="DNS系统需要解决的问题"><a href="#DNS系统需要解决的问题" class="headerlink" title="DNS系统需要解决的问题"></a>DNS系统需要解决的问题</h3><p>问题1:如何命名设备</p>
+<ul>
+<li>用有意义的字符串:好记，便于人类用使用</li>
+<li>解决一个平面命名的重名问题:层次化命名</li>
+</ul>
+<p>问题2:如何完成名字到IP地址的转换</p>
+<ul>
+<li>分布式的数据库维护和响应名字查询</li>
+</ul>
+<p>问题3:如何维护:增加或者删除一个域，需要在域名系统中做哪些工作</p>
+<p>DNS(Domain Name System)的历史</p>
+<p>ARPANET的名字解析解决方案</p>
+<ul>
+<li>主机名:没有层次的一个字符串（一个平面&gt;</li>
+<li>存在着一个（集中）维护站:维护着一张主机名-TP地址的映射文件: Hosts.txt</li>
+<li>每台主机定时从维护站取文件</li>
+</ul>
+<p>ARPANET解决方案的问题</p>
+<ul>
+<li>当网络中主机数量很大时<ul>
+<li>没有层次的主机名称很难分配</li>
+<li>文件的管理、发布、查找都很麻烦</li>
+</ul>
+</li>
+</ul>
+<p>DNS总体思路和目标</p>
+<ul>
+<li>DNS的主要思路<ul>
+<li>分层的、基于域的命名机制</li>
+<li>若干分布式的数据库完成名字到IP地址的转换</li>
+<li>运行在UDP之上端口号为53的应用服务</li>
+<li>核心的Internet功能，但以应用层协议实现<ul>
+<li>在网络边缘处理复杂性</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DNS主要目的:</li>
+<li>实现主机名-IP地址的转换(name&#x2F;IP translate)</li>
+<li>其它目的<ul>
+<li>主机别名到规范名字的转换: Host aliasing</li>
+<li>邮件服务器别名到邮件服务器的正规名字的转换:Mail serveraliasing</li>
+<li>负载均衡: Load Distribution</li>
+</ul>
+</li>
+</ul>
+<p>问题1:DNS名字空间(The DNS Name Space)</p>
+<p>DNS域名结构</p>
+<ul>
+<li>一个层面命名设备会有很多重名</li>
+<li>DNS采用层次树状结构的命名方法<br>o Internet根被划为几百个顶级域(top lever domains)<br>o通用的(generic)<br>.com; .edu ; .gov ; .int ; .mil ; .net ; .org.firm ; .hsop ; .web ; .arts ; .rec ;国家的(countries)<br>.cn ; .us ; .nl ; .jp<br>o每个(子)域下面可划分为若干子域(subdomains)o树叶是主机</li>
+</ul>
 <h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1>
       
     </div>
